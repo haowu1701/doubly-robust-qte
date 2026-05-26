@@ -8,7 +8,7 @@ This folder contains the simulation code used to produce Table 2 in the main man
 - `sandwich_expectation/`: variance estimator based on taking expectation first.
 - `sandwich_derivation/`: variance estimator based on taking derivation first.
 - `IF_based var/`: influence-function-based variance estimator.
-- `BootstrapnBoot500/`: nonparametric bootstrap with 500 bootstrap replicates.
+- `Inference/Bootstrap variance/`: nonparametric bootstrap with 500 bootstrap replicates.
 - `Coverage probability.R`: helper script for summarizing coverage probabilities and variance estimates from generated results.
 
 Each variance-estimator folder contains four simulation scenarios:
@@ -56,17 +56,17 @@ source("RUN.R")
 `RUN.R` creates files such as:
 
 - `true_values.RData`
-- `nsim1000_data_n1000_mc.RData`
+- `nsim1000_data_n1000_<scenario>.RData`
 - `nsim1000_results_n1000_mc.csv`
 - `simulation_summary_all_scenarios_long.csv`
 - `simulation_summary_all_scenarios_wide.csv`
 
-Before running the other variance estimators, copy or link the generated dataset and true-value file into the corresponding scenario folder, using the filenames expected by those scripts:
+The empirical-variance simulations use the same generated datasets across `cc`, `cm`, `mc`, and `mm`; the scenario only changes the working model specification. Therefore, before running the other variance estimators, copy or link the generated dataset into the corresponding scenario folder and rename it to the common filename expected by those scripts:
 
 - `nsim1000_data_n1000.RData`
 - `true_values.RData`
 
-For example, for scenario `mc`, place those two files in `sandwich_expectation/mc/`, `sandwich_derivation/mc/`, `IF_based var/mc/`, and `BootstrapnBoot500/mc/`, then run:
+For example, for scenario `mc`, place those two files in `sandwich_expectation/mc/`, `sandwich_derivation/mc/`, `IF_based var/mc/`, and `Inference/Bootstrap variance/mc/`, then run:
 
 ``` r
 source("sand_expectation_RUN.R")
