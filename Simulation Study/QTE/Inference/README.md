@@ -5,10 +5,10 @@ This folder contains the simulation code used to produce Table 2 in the main man
 ## Folder Structure
 
 - `Empirical variance/`: generates the simulated datasets and calculates empirical variances.
-- `sandwich_expectation/`: sandwich variance estimator based on taking expectation first.
-- `sandwich_derivation/`: sandwich variance estimator based on taking derivation first.
-- `IF_based var/`: influence-function-based variance estimator.
-- `Inference/Bootstrap variance/`: nonparametric bootstrap with 500 bootstrap replicates.
+- `Sandwich_expectation variance/`: sandwich variance estimator based on taking expectation first.
+- `Sandwich_derivation variance/`: sandwich variance estimator based on taking derivation first.
+- `IF_based variance/`: influence-function-based variance estimator.
+- `Bootstrap variance/`: nonparametric bootstrap with 500 bootstrap replicates.
 - `Coverage probability.R`: helper script for summarizing coverage probabilities and variance estimates from generated results.
 
 Each variance-estimator folder contains four simulation scenarios:
@@ -36,6 +36,7 @@ Each scenario folder contains some or all of the following scripts:
 The scripts in this folder generate the inference results reported in:
 
 - Main manuscript: Table 2.
+- Supplementary material: Table S3.10.
 
 Generated data and results are not included in the repository.
 
@@ -66,7 +67,7 @@ The empirical-variance simulations use the same generated datasets across `cc`, 
 - `nsim1000_data_n1000.RData`
 - `true_values.RData`
 
-For example, for scenario `mc`, place those two files in `sandwich_expectation/mc/`, `sandwich_derivation/mc/`, `IF_based var/mc/`, and `Inference/Bootstrap variance/mc/`, then run:
+For example, for scenario `mc`, place those two files in `Sandwich_expectation variance/mc/`, `Sandwich_derivation variance/mc/`, `IF_based variance/mc/`, and `Bootstrap variance/mc/`, then run:
 
 ``` r
 source("sand_expectation_RUN.R")
@@ -76,3 +77,12 @@ source("Bootstrap_RUN.R")
 ```
 
 Run the analogous scripts inside `cc/`, `cm/`, `mc/`, and `mm/` to reproduce all Table 2 entries.
+
+## Supplementary Table S3.10
+
+Table S3.10 in the supplementary material uses only the sandwich variance estimators. To reproduce it, run the scripts in:
+
+- `Sandwich_derivation variance/`
+- `Sandwich_expectation variance/`
+
+for the additional quantile levels `0.1`, `0.25`, `0.75`, and `0.9`.
