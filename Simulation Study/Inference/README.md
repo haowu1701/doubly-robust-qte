@@ -5,8 +5,8 @@ This folder contains the simulation code used to produce Table 2 in the main man
 ## Folder Structure
 
 - `Empirical variance/`: generates the simulated datasets and calculates empirical variances.
-- `sandwich_expectation/`: variance estimator based on taking expectation first.
-- `sandwich_derivation/`: variance estimator based on taking derivation first.
+- `sandwich_expectation/`: sandwich variance estimator based on taking expectation first.
+- `sandwich_derivation/`: sandwich variance estimator based on taking derivation first.
 - `IF_based var/`: influence-function-based variance estimator.
 - `Inference/Bootstrap variance/`: nonparametric bootstrap with 500 bootstrap replicates.
 - `Coverage probability.R`: helper script for summarizing coverage probabilities and variance estimates from generated results.
@@ -37,7 +37,7 @@ The scripts in this folder generate the inference results reported in:
 
 - Main manuscript: Table 2.
 
-Generated data and results are not included in the repository. This includes `.RData`, `.rds`, `.csv`, and cluster `.out` files.
+Generated data and results are not included in the repository.
 
 ## Running the Code
 
