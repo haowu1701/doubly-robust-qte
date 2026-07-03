@@ -1,4 +1,4 @@
-# Doubly Robust QTE
+# Doubly Robust Estimators of Quantile Treatment Effects With Semiparametric Cumulative Probability Models
 
 This repository contains simulation studies and real-data analysis code for doubly robust estimation of "Doubly Robust Estimators of Quantile Treatment Effects With Semiparametric Cumulative Probability Models".
 
